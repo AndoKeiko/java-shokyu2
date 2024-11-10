@@ -42,6 +42,7 @@ public class StudentAssessment {
         return;
       }
     }
+    System.out.println();
   }
 
   public void averageStudent() {
@@ -51,6 +52,7 @@ public class StudentAssessment {
         .average()
         .orElse(0);
     System.out.println(average + "点");
+    System.out.println();
   }
 
   public void displayAllStudents() {
