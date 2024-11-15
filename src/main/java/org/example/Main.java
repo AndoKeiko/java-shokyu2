@@ -18,6 +18,13 @@ public class Main {
       System.out.println("6. 終了");
       System.out.print("選択してください:");
 
+      if (!scanner.hasNextInt()) {
+        System.out.println("無効な入力です。数字を入力してください。");
+        System.out.println();
+        scanner.next();
+        continue;
+      }
+
       int choice = scanner.nextInt();
       System.out.println();
       try {
@@ -40,9 +47,15 @@ public class Main {
             case 6:
               studentAssessment.closeStudentList();
               break;
+            default:
+              System.out.println("不正な数字が入力されました。");
+              System.out.println();
+              break;
           }
       } catch (Exception e) {
-        choice = scanner.nextInt();
+        System.out.println("エラーが発生しました。入力を再確認してください。");
+        System.out.println();
+        scanner.nextInt();
       }
     }
 
